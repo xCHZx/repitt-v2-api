@@ -1,0 +1,71 @@
+import { JwtService } from '@nestjs/jwt';
+import { PostgresJsDatabase } from 'drizzle-orm/postgres-js';
+import { LoginDto } from './dto/login.dto';
+import { RegisterDto } from './dto/register.dto';
+import { UsersService } from '../users/users.service';
+export declare class AuthService {
+    private jwtService;
+    private usersService;
+    private readonly db;
+    constructor(jwtService: JwtService, usersService: UsersService, db: PostgresJsDatabase<Record<string, unknown>>);
+    validateUser(email: string, pass: string): Promise<any>;
+    login(loginDto: LoginDto): Promise<{
+        access_token: string;
+        user: any;
+    }>;
+    register(registerDto: RegisterDto): Promise<{
+        message: string;
+        access_token: string;
+        user: {
+            password: string;
+            id: number;
+            createdAt: Date;
+            updatedAt: Date;
+            firstName: string;
+            lastName: string;
+            phone: string | null;
+            email: string;
+            repittCode: string;
+            accountStatusId: number;
+            qrPath: string | null;
+            hasVerifiedEmail: boolean;
+            emailVerifiedAt: Date | null;
+            deletedAt: Date | null;
+        };
+        business: {
+            name: string;
+            id: number;
+            createdAt: Date;
+            updatedAt: Date;
+            phone: string | null;
+            qrPath: string | null;
+            deletedAt: Date | null;
+            description: string | null;
+            address: string | null;
+            categoryId: number;
+            userId: number;
+            openingHours: string | null;
+            isActive: boolean;
+            logoPath: string | null;
+            flyerPath: string | null;
+        };
+        stampCard: {
+            name: string;
+            id: number;
+            createdAt: Date;
+            updatedAt: Date;
+            deletedAt: Date | null;
+            description: string | null;
+            isActive: boolean;
+            requiredStamps: number;
+            requiredHours: number;
+            startDate: Date | null;
+            endDate: Date | null;
+            stampIconPath: string | null;
+            primaryColor: string | null;
+            businessId: number;
+            reward: string | null;
+            isCompleted: boolean;
+        };
+    }>;
+}
