@@ -1,1 +1,42 @@
-node_modules
+# --- COMPILACIÓN Y DEPENDENCIAS ---
+node_modules/
+dist/
+artifacts/
+build/
+*.tsbuildinfo
+
+# --- CONFIGURACIÓN Y SECRETOS ---
+.env
+.env.production
+.env.staging
+.env.test
+.env.local
+
+# --- LOGS Y DEPURACIÓN ---
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+logs/
+*.log
+
+# --- PRUEBAS (TESTING) ---
+/coverage
+/.nyc_output
+
+# --- IDEs Y EDITORES ---
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# --- SISTEMA OPERATIVO ---
+.DS_Store
+Thumbs.db
