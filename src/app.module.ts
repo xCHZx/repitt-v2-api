@@ -7,6 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { StampCardsModule } from './stamp-cards/stamp-cards.module';
 import { VisitsModule } from './visits/visits.module';
+import { CatalogsModule } from './catalogs/catalogs.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { VisitsModule } from './visits/visits.module';
     UsersModule,
     StampCardsModule,
     VisitsModule,
+    CatalogsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
