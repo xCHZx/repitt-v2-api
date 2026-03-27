@@ -15,6 +15,8 @@ export const stampCards = pgTable('stamp_cards', {
     .references(() => businesses.id)
     .notNull(),
   reward: varchar('reward', { length: 255 }),
+  allowedRepeats: integer('allowed_repeats'), // null = unlimited cycles
+  requireOtp: boolean('require_otp').default(false).notNull(),
   isCompleted: boolean('is_completed').default(false).notNull(),
   isActive: boolean('is_active').default(true).notNull(),
   createdAt: timestamp('created_at').defaultNow().notNull(),

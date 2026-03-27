@@ -5,11 +5,15 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { UsersModule } from '../users/users.module';
+import { SupabaseModule } from '../supabase/supabase.module';
+import { FlyerModule } from '../flyer/flyer.module';
 import { JwtStrategy } from './strategies/jwt.strategy';
 
 @Module({
   imports: [
     UsersModule,
+    SupabaseModule,
+    FlyerModule,
     PassportModule,
     JwtModule.registerAsync({
       imports: [ConfigModule],

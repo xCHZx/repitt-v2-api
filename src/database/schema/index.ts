@@ -4,3 +4,8 @@ export * from './businesses.schema';
 export * from './stamp_cards.schema';
 export * from './user_stamp_cards.schema';
 export * from './visits.schema';
+export * from './phone_otps.schema';
+export * from './password_reset_tokens.schema';
+export * from './subscriptions.schema';
+export * from './subscription_items.schema';
+export * from './billing_webhook_events.schema';

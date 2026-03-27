@@ -6,6 +6,7 @@ CREATE TABLE "businesses" (
 	"phone" varchar(20),
 	"category_id" integer NOT NULL,
 	"user_id" integer NOT NULL,
+	"repitt_code" varchar(20) NOT NULL,
 	"opening_hours" text,
 	"is_active" boolean DEFAULT true NOT NULL,
 	"logo_path" varchar(500),
@@ -13,7 +14,8 @@ CREATE TABLE "businesses" (
 	"flyer_path" varchar(500),
 	"created_at" timestamp DEFAULT now() NOT NULL,
 	"updated_at" timestamp DEFAULT now() NOT NULL,
-	"deleted_at" timestamp
+	"deleted_at" timestamp,
+	CONSTRAINT "businesses_repitt_code_unique" UNIQUE("repitt_code")
 );
 --> statement-breakpoint
 CREATE TABLE "account_statuses" (
@@ -57,6 +59,7 @@ CREATE TABLE "user_stamp_cards" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"user_id" integer NOT NULL,
 	"stamp_card_id" integer NOT NULL,
+	"repitt_code" varchar(20) NOT NULL,
 	"visits_count" integer DEFAULT 0 NOT NULL,
 	"is_active" boolean DEFAULT true NOT NULL,
 	"is_completed" boolean DEFAULT false NOT NULL,
@@ -65,7 +68,8 @@ CREATE TABLE "user_stamp_cards" (
 	"completed_at" timestamp,
 	"redeemed_at" timestamp,
 	"created_at" timestamp DEFAULT now() NOT NULL,
-	"updated_at" timestamp DEFAULT now() NOT NULL
+	"updated_at" timestamp DEFAULT now() NOT NULL,
+	CONSTRAINT "user_stamp_cards_repitt_code_unique" UNIQUE("repitt_code")
 );
 --> statement-breakpoint
 CREATE TABLE "users" (

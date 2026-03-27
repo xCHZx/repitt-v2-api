@@ -14,8 +14,10 @@ export const businesses = pgTable('businesses', {
   userId: integer('user_id')
     .references(() => users.id)
     .notNull(),
+  repittCode: varchar('repitt_code', { length: 20 }).notNull().unique(),
   openingHours: text('opening_hours'),
-  isActive: boolean('is_active').default(true).notNull(),
+  isActive: boolean('is_active').default(false).notNull(),
+  stripeCustomerId: varchar('stripe_customer_id', { length: 255 }), // 1 customer Stripe por negocio
   logoPath: varchar('logo_path', { length: 500 }),
   qrPath: varchar('qr_path', { length: 500 }),
   flyerPath: varchar('flyer_path', { length: 500 }),

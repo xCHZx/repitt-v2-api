@@ -35,17 +35,21 @@ export class RegisterDto {
   userPhone?: string;
 
   // Business Details
-  @ApiProperty({ example: 'My Awesome Cafe' })
+  @ApiProperty({ example: 'My Awesome Cafe', required: false })
   @IsString()
-  @IsNotEmpty()
-  businessName!: string;
+  @IsOptional()
+  businessName?: string;
 
   @ApiProperty({ example: 'Best coffee in town', required: false })
   @IsString()
   @IsOptional()
   businessDescription?: string;
 
-  @ApiProperty({ example: 1, description: 'Category ID from catalogs' })
-  @IsNotEmpty()
-  categoryId!: number;
+  @ApiProperty({
+    example: 1,
+    description: 'Category ID from catalogs',
+    required: false,
+  })
+  @IsOptional()
+  categoryId?: number;
 }

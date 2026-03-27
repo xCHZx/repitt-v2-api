@@ -1,0 +1,1 @@
+ALTER TABLE "stamp_cards" ADD COLUMN "allowed_repeats" integer;

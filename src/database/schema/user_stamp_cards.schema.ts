@@ -10,6 +10,7 @@ export const userStampCards = pgTable('user_stamp_cards', {
   stampCardId: integer('stamp_card_id')
     .references(() => stampCards.id)
     .notNull(),
+  repittCode: varchar('repitt_code', { length: 20 }).notNull().unique(),
   visitsCount: integer('visits_count').default(0).notNull(),
   isActive: boolean('is_active').default(true).notNull(),
   isCompleted: boolean('is_completed').default(false).notNull(),

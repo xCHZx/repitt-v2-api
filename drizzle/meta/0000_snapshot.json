@@ -1,5 +1,5 @@
 {
-  "id": "2817a0a4-5746-499c-84a4-bf654521c80d",
+  "id": "2c8d77bd-e062-4373-876d-b97a06d5b4ab",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -47,6 +47,12 @@
         "user_id": {
           "name": "user_id",
           "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "repitt_code": {
+          "name": "repitt_code",
+          "type": "varchar(20)",
           "primaryKey": false,
           "notNull": true
         },
@@ -132,7 +138,15 @@
         }
       },
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {},
+      "uniqueConstraints": {
+        "businesses_repitt_code_unique": {
+          "name": "businesses_repitt_code_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "repitt_code"
+          ]
+        }
+      },
       "policies": {},
       "checkConstraints": {},
       "isRLSEnabled": false
@@ -394,6 +408,12 @@
           "primaryKey": false,
           "notNull": true
         },
+        "repitt_code": {
+          "name": "repitt_code",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
         "visits_count": {
           "name": "visits_count",
           "type": "integer",
@@ -485,7 +505,15 @@
         }
       },
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {},
+      "uniqueConstraints": {
+        "user_stamp_cards_repitt_code_unique": {
+          "name": "user_stamp_cards_repitt_code_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "repitt_code"
+          ]
+        }
+      },
       "policies": {},
       "checkConstraints": {},
       "isRLSEnabled": false

@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
-import { StampCardsService } from './stamp-cards.service';
+import { SupabaseModule } from '../supabase/supabase.module';
 import { StampCardsController } from './stamp-cards.controller';
+import { StampCardsService } from './stamp-cards.service';
 
 @Module({
+  imports: [SupabaseModule],
   providers: [StampCardsService],
-  controllers: [StampCardsController]
+  controllers: [StampCardsController],
 })
 export class StampCardsModule {}
