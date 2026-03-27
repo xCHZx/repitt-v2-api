@@ -2,7 +2,7 @@
 set -e
 
 echo "Running database migrations..."
-npx drizzle-kit migrate
+node dist/migrate
 
 echo "Starting application..."
 exec node dist/main
