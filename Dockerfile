@@ -36,6 +36,9 @@ COPY --from=builder /app/src/assets ./src/assets
 # Copiar migraciones de Drizzle
 COPY --from=builder /app/drizzle ./drizzle
 
+# Script de migración (JS puro, sin compilación)
+COPY migrate.js ./
+
 # Entrypoint
 COPY entrypoint.sh ./
 RUN chmod +x entrypoint.sh
