@@ -12,7 +12,7 @@ COPY package*.json ./
 RUN npm ci
 
 COPY . .
-RUN npm run build
+RUN npm run build && npx tsc -p tsconfig.migrate.json
 
 # ─── Stage 2: Production ──────────────────────────────────────────────────────
 FROM node:20-slim AS production
