@@ -1,9 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "include": ["src/migrate.ts"],
-  "compilerOptions": {
-    "outDir": "/tmp/migrate-dist",
-    "rootDir": "./src",
-    "incremental": false
-  }
-}
