@@ -6,7 +6,7 @@ COPY package*.json ./
 RUN npm ci
 
 COPY . .
-RUN npm run build && ls dist/main.js
+RUN npx tsc -p tsconfig.build.json && ls dist/main.js
 
 FROM node:20-slim AS production
 
